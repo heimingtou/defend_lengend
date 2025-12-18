@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class tower : MonoBehaviour
 {
-    
+    //doi tuong gan voi tower
     public GameObject bullet;
     public GameObject gun;
     private List<Transform> enemiesInRange = new List<Transform>();
-    public float turnSpeed = 10f;
     Transform targetshoot;
+    public GameObject circleRange;
+    // gia tri gan voi tower
+    public float range;
+    public float turnSpeed = 10f;
+    public float cost;
     public float countdown = 1f;
+    
     void OnTriggerEnter2D(Collider2D other)
     {
        //if (other.CompareTag("enemy"))
@@ -31,6 +36,8 @@ public class tower : MonoBehaviour
     void Start()
     {
         //Debug.Log("sung hoat dong");
+        CircleCollider2D circle = GetComponent<CircleCollider2D>();
+        circle.radius = range;
     }
 
     // Update is called once per frame

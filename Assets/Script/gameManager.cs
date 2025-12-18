@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -7,13 +8,22 @@ using UnityEngine.Tilemaps;
 public class gameManager : MonoBehaviour
 {
     tower towerToBuilding;
+    public TMP_Text Text;
+    public GameObject rangeCircle;
     public cursorCustom cursorCustom;
     public Tripod[] tripods;
     float maxDistance=2f;
+    public float coin=200;
+
     // Start is called before the first frame update
+    public static gameManager instance;
+    public void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
-        
+        Text.text = coin.ToString();
     }
 
     // Update is called once per frame
@@ -49,6 +59,7 @@ public class gameManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && towerToBuilding != null && nearlestTile!=null)
         {
             towerToBuilding.buildTower(nearlestTile.transform.position);
+            nearlestTile.occupie = true;
             towerToBuilding = null;
             cursorCustom.gameObject.SetActive(false); // Ẩn con trỏ tùy chỉnh
             Cursor.visible = true;
@@ -56,9 +67,21 @@ public class gameManager : MonoBehaviour
     }
     public void BuyTower(tower tower)
     {
-        cursorCustom.gameObject.SetActive(true);
+        if(tower.cost<coin)
+       { cursorCustom.gameObject.SetActive(true);
         cursorCustom.GetComponent<SpriteRenderer>().sprite = tower.GetComponent<SpriteRenderer>().sprite;
+        rangeCircle.SetActive(true);
+        rangeCircle.transform.localScale = new Vector3(tower.range * 2, tower.range * 2, 1);
         Cursor.visible = false;
         towerToBuilding = tower;
+        changeCost(tower.cost * -1);
+        }
+    }
+    public void changeCost(float addCoint)
+    {
+       
+        coin += addCoint;
+        PlayerPrefs.SetFloat(keyForData.Cost_key, coin);
+        Text.text = coin.ToString();
     }
 }

@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     // Start is called before the first frame update
     public float hp;
-   
+    public float cost;
     void Start()
     {
         
@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
     }
     public void die()
     {
+        gameManager.instance.changeCost(cost);
         Destroy(gameObject);
     }
 }
