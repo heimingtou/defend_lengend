@@ -7,7 +7,7 @@ public class tower : MonoBehaviour
     //doi tuong gan voi tower
     public GameObject bullet;
     public GameObject gun;
-    private List<Transform> enemiesInRange = new List<Transform>();
+    public List<Transform> enemiesInRange = new List<Transform>();
     Transform targetshoot;
     public GameObject circleRange;
     // gia tri gan voi tower
@@ -20,7 +20,7 @@ public class tower : MonoBehaviour
     {
        //if (other.CompareTag("enemy"))
         {
-            enemiesInRange.Add(other.transform);
+           enemiesInRange.Add(other.transform);
             //Debug.Log("da vao");
         }
     }
@@ -43,6 +43,7 @@ public class tower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        enemiesInRange.RemoveAll(e => e == null);
         if (enemiesInRange.Count > 0)
         {
             targetshoot = enemiesInRange[0].transform;

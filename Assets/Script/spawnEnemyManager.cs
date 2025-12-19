@@ -7,9 +7,16 @@ using UnityEngine;
 public class spawnEnemyManager : MonoBehaviour
 {
     // Start is called before the first frame update\\
+
+
     public GameObject enemyPrefab;
     public GameObject PositionSpawn;
     float timer = 0;
+    public static spawnEnemyManager instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         spawn();

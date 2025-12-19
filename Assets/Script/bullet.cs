@@ -9,6 +9,7 @@ public class bullet : MonoBehaviour
     public Transform target;
     public float speed = 5f;
     public float damage = 10;
+    public elementType element;
     void Start()
     {
         
@@ -18,8 +19,10 @@ public class bullet : MonoBehaviour
         Enemy enemy= other.gameObject.GetComponent<Enemy>();
         if( enemy!=null)
         {
+            float multiplier = elementManager.instance.calMultiplier(element,enemy.element);
             Destroy(gameObject);
-            enemy.takeDamage(damage);
+            Debug.Log(multiplier);
+            enemy.takeDamage(damage*multiplier);
             if(enemy.hp<=0)
             {
                 enemy.die();

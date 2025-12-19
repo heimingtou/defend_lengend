@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     public float hp;
     public float cost;
+    public elementType  element;
     void Start()
     {
         
