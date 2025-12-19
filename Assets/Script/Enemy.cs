@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     }
     public void takeDamage(float damage)
     {
+        Debug.Log(damage);
         hp = hp - damage ;
     }
     public void die()

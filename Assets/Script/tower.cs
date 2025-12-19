@@ -19,6 +19,8 @@ public class tower : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
        //if (other.CompareTag("enemy"))
+       Enemy enemy= other.GetComponent<Enemy>();
+        if (enemy != null)
         {
            enemiesInRange.Add(other.transform);
             //Debug.Log("da vao");
@@ -26,14 +28,15 @@ public class tower : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D other)
     {
-        //if (other.CompareTag("enemy"))
+        Enemy enemy = other.GetComponent<Enemy>();
+        if (enemy != null)
         {
             enemiesInRange.Remove(other.transform);
             //Debug.Log("da ra");
         }
     }
     // Start is called before the first frame update
-    void Start()
+     public virtual void  Start()
     {
         //Debug.Log("sung hoat dong");
         CircleCollider2D circle = GetComponent<CircleCollider2D>();
@@ -41,7 +44,7 @@ public class tower : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         enemiesInRange.RemoveAll(e => e == null);
         if (enemiesInRange.Count > 0)

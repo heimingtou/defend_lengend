@@ -42,6 +42,5 @@ public class spawnEnemyManager : MonoBehaviour
         SplineController controler= enemy.GetComponent<SplineController>();
         controler.Spline = path;
         controler.Play();
-
     }
 }
