@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08643079d5229834c9b89162422e05db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 90
+  hp: 30
   cost: 20
   element: 2
 --- !u!1 &9203711698430035309

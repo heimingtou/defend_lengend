@@ -1,0 +1,105 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class tower : MonoBehaviour
+{
+    //doi tuong gan voi tower
+    public GameObject bullet;
+    public GameObject gun;
+    public List<Sprite> updateRange= new List<Sprite>();
+    public List<Transform> enemiesInRange = new List<Transform>();
+    Transform targetshoot;
+    public GameObject circleRange;
+    public float HpPlayer;
+    // gia tri gan voi tower
+    public float currentDamage;
+    public float currentRange; // luu tam pham vi
+    public float turnSpeed = 10f;
+    public float currentCost; //luu tam gia tri price
+    public float countdown = 1f;
+    public int currentLevel = 0; // luu tam gia tri level
+    public HeroData data;
+    
+    void OnTriggerEnter2D(Collider2D other)
+    {
+       //if (other.CompareTag("enemy"))
+       Enemy enemy= other.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+           enemiesInRange.Add(other.transform);
+            //Debug.Log("da vao");
+        }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        Enemy enemy = other.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            enemiesInRange.Remove(other.transform);
+            //Debug.Log("da ra");
+        }
+    }
+    private void Awake()
+    {
+        HpPlayer = data.MaxHp;
+        currentCost = data.cost;
+        currentDamage = data.Damage;
+        currentRange = data.Range;
+        currentLevel = data.Level;
+        CircleCollider2D circle = GetComponent<CircleCollider2D>();
+        circle.radius = data.Range;
+        circleRange.transform.localScale = new Vector3(currentRange * 2, currentRange * 2, 1);
+
+    }
+    // Start is called before the first frame update
+    public virtual void  Start()
+    {
+        
+        //Debug.Log("sung hoat dong");
+       
+    }
+    // Update is called once per frame
+    public virtual void Update()
+    {
+        enemiesInRange.RemoveAll(e => e == null);
+        if (enemiesInRange.Count > 0)
+        {
+            targetshoot = enemiesInRange[0].transform;
+            LockOnTarget();
+            shoot();
+          
+        }
+        countdown += Time.deltaTime;
+    }
+    public void shoot()
+    {
+        if (countdown >= 1)
+        {
+            GameObject bulletVirtual = Instantiate(bullet, gun.transform.position, Quaternion.identity);
+            bullet targetBullet = bulletVirtual.GetComponent<bullet>();
+            targetBullet.target = targetshoot;
+            targetBullet.damage = currentDamage;
+            countdown = 0;
+        }
+        
+    }
+    void LockOnTarget()
+    {
+        Vector3 dir = targetshoot.position - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+
+        // --- QUAN TRỌNG: CHỈNH HƯỚNG ---
+        // Nếu ảnh súng của bạn vẽ hướng lên trên (dọc), hãy trừ 90 độ
+        // angle = angle - 90; 
+
+        // 4. Tạo góc quay mục tiêu (Chỉ xoay trục Z)
+       
+
+        // 5. Xoay từ từ (Lerp)
+        transform.rotation = Quaternion.Euler(0, 0,angle-90);
+    }
+   
+    
+}

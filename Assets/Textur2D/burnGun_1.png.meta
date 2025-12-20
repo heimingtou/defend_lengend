@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fed9dd827e237b3478b8409234f6fd88
+guid: ba3d437baeba86741942a733ed876597
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -30,7 +30,7 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: 50
+  textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 155
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -57,8 +57,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
-  flipbookRows: 0
-  flipbookColumns: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -85,7 +85,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,19 +100,27 @@ TextureImporter:
       name: burnGun_1_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 113
         y: 0
-        width: 192
+        width: 79
         height: 139
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.51469904, y: 0.24698658}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 0, y: -69.5}
+        - {x: 61.5, y: 0}
+        - {x: 0, y: 69.5}
+        - {x: -61.5, y: 0}
+      physicsShape:
+      - - {x: 0, y: -69.5}
+        - {x: 61.5, y: 0}
+        - {x: 0, y: 69.5}
+        - {x: -61.5, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: 3d365b6a6d0020a44a5fefe64bb74ee3
-      internalID: 909088641
+      spriteID: c184baa00bccb8c4e8d10d4fae1b8ef5
+      internalID: -1068966448
       vertices: []
       indices: 
       edges: []
@@ -120,7 +128,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8638998d8468a4a458fdd3ce61defe9e
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -128,7 +136,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      burnGun_1_0: 909088641
+      burnGun_1_0: -1068966448
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

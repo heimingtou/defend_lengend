@@ -174,4 +174,4 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 5
   damage: 10
-  element: 0
+  element: 1

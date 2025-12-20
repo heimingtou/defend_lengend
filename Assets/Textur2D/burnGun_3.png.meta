@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fed9dd827e237b3478b8409234f6fd88
+guid: 3337ee37f6bc5394d81d81f3314adb3f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -30,7 +30,7 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: 50
+  textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 155
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -57,8 +57,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
-  flipbookRows: 0
-  flipbookColumns: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -85,7 +85,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,22 +97,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: burnGun_1_0
+      name: burnGun_3_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 192
-        height: 139
+        y: 18
+        width: 42
+        height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d365b6a6d0020a44a5fefe64bb74ee3
-      internalID: 909088641
+      spriteID: 2ad4ec7942e5a3d45b2dfa13dd915124
+      internalID: 1189183690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burnGun_3_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 42
+        width: 114
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77e8e13a68a03b141a51bd0495698cca
+      internalID: -1110540879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burnGun_3_2
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 107
+        height: 157
+      alignment: 9
+      pivot: {x: 0.61032236, y: 0.2994988}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 282332a366ca43442857223c5b10cacf
+      internalID: -1307273917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burnGun_3_3
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 0
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 365b55687d49f134abf981df4d1c88c4
+      internalID: -1247379082
       vertices: []
       indices: 
       edges: []
@@ -120,7 +183,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8638998d8468a4a458fdd3ce61defe9e
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -128,7 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      burnGun_1_0: 909088641
+      burnGun_3_0: 1189183690
+      burnGun_3_1: -1110540879
+      burnGun_3_2: -1307273917
+      burnGun_3_3: -1247379082
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
