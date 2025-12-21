@@ -6,6 +6,7 @@ public class elementManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public static elementManager instance;
+    public List<Sprite> SpriteELement;
     private void Awake()
     {
         instance = this;
@@ -37,5 +38,27 @@ public class elementManager : MonoBehaviour
                 break;
         }
         return 1f;
+    }
+    public Sprite getSpriteElement(elementType elementType)
+    {
+        switch (elementType)
+        {
+            case elementType.metal: 
+                return SpriteELement[0];
+                
+            case elementType.wood:
+                return SpriteELement[1];
+                   
+            case elementType.water:
+                return SpriteELement[2];
+                
+            case elementType.fire:
+                return SpriteELement[3];
+               
+            case elementType.earth:
+                return SpriteELement[4];
+                
+        }
+        return null;
     }
 }

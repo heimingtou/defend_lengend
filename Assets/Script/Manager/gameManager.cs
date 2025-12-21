@@ -61,8 +61,7 @@ public class gameManager : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0) && towerToBuilding != null && nearlestTile!=null && towerToBuild!=null )
         {
-            Instantiate(towerToBuild.gameObject, nearlestTile.transform.position,Quaternion.identity);
-            
+            GameObject towerBuilding= Instantiate(towerToBuild.gameObject, nearlestTile.transform.position,Quaternion.identity);
             nearlestTile.occupie = true;
             towerToBuilding = null;
             cursorCustom.gameObject.SetActive(false); // Ẩn con trỏ tùy chỉnh

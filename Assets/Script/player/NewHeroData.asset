@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a404183e900c37a469b58d492814edf4, type: 3}
   m_Name: NewHeroData
   m_EditorClassIdentifier: 
-  heroIcon: {fileID: 0}
-  Damage: 0
-  Range: 0
+  heroIcon: {fileID: -1068966448, guid: ba3d437baeba86741942a733ed876597, type: 3}
+  MaxHp: 30
+  Damage: 10
+  Range: 3
   Level: 0
-  cost: 0
+  cost: 30

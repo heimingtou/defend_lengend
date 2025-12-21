@@ -181,7 +181,7 @@ MonoBehaviour:
   countdown: 1
   currentLevel: 0
   data: {fileID: 11400000, guid: 0fc57184744e58b49ab3c938aa5d9d54, type: 2}
-  buttonUpdate: {fileID: 0}
+  element: 0
   popupHeroPrefab: {fileID: 2881187506734944264, guid: 09738cd78ea58e447b380234bda9d28f, type: 3}
   isSelect: 0
 --- !u!1 &2414438857333647735
@@ -327,8 +327,8 @@ Transform:
   m_GameObject: {fileID: 7252679570769011643}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.9574943, w: -0.2884523}
-  m_LocalPosition: {x: -11.2661, y: 0.8472, z: 0}
-  m_LocalScale: {x: 0.60839015, y: 0.70308596, z: 1}
+  m_LocalPosition: {x: -10.9871, y: 0.7542, z: 0}
+  m_LocalScale: {x: 0.83392066, y: 0.6428331, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6762021028593461967}
@@ -451,6 +451,6 @@ MonoBehaviour:
   countdown: 1
   currentLevel: 0
   data: {fileID: 11400000, guid: 0fc57184744e58b49ab3c938aa5d9d54, type: 2}
-  buttonUpdate: {fileID: 0}
+  element: 1
   popupHeroPrefab: {fileID: 0}
   isSelect: 0

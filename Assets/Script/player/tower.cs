@@ -21,7 +21,8 @@ public class tower : MonoBehaviour
     public float countdown = 1f;
     public int currentLevel = 0; // luu tam gia tri level
     public HeroData data;
-    
+    public elementType element;
+
     void OnTriggerEnter2D(Collider2D other)
     {
        //if (other.CompareTag("enemy"))
@@ -81,6 +82,7 @@ public class tower : MonoBehaviour
             bullet targetBullet = bulletVirtual.GetComponent<bullet>();
             targetBullet.target = targetshoot;
             targetBullet.damage = currentDamage;
+            targetBullet.element = element;
             countdown = 0;
         }
         
