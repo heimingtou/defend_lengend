@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 8541706970180620444}
   serializedVersion: 2
   m_LocalRotation: {x: 0.13084602, y: -0.5808772, z: -0.033462487, w: 0.80270875}
-  m_LocalPosition: {x: -0, y: 0.1565, z: -0.3253}
-  m_LocalScale: {x: 0.5324967, y: 0.7722793, z: 1}
+  m_LocalPosition: {x: 0, y: 0.1388, z: -0.0802}
+  m_LocalScale: {x: 0.8289376, y: 0.7722793, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6737295955347914290}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7b98a2b983b49524980d82f556305938, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 90ee7787efd3885428d5ad13ba6512db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,7 +149,7 @@ BoxCollider2D:
   m_Offset: {x: -0.03601277, y: -0.14843069}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5829969}
+    pivot: {x: 0.5, y: 0.5208421}
     oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1.1, y: 0.6}
     adaptiveTilingThreshold: 0.5
@@ -172,8 +172,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 30
-  cost: 20
-  element: 2
+  damage: 2
+  cost: 22
+  element: 4
 --- !u!1 &9203711698430035309
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +188,7 @@ GameObject:
   - component: {fileID: 8729573644863698525}
   - component: {fileID: 6280488485814242856}
   m_Layer: 0
-  m_Name: New Prefab
+  m_Name: New Prefab 2
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -9,6 +9,8 @@ using UnityEngine.UIElements;
 
 public class HeroUIPopup : MonoBehaviour
 {
+    public static HeroUIPopup instance;
+    
     // Start is called before the first frame update
     public TMP_Text damage;
     public TMP_Text range;
@@ -21,6 +23,12 @@ public class HeroUIPopup : MonoBehaviour
     public UnityEngine.UI.Image Icon;
     public UnityEngine.UI.Image IconElement;
     public GameObject target;
+    public bool isShow=false;
+    public void Awake()
+    {
+        instance = this;
+        isShow = false;
+    }
     public void SetUp(float Damage, float Range,float Level, float Cost, Sprite sprite,GameObject targetTower,Sprite element)
     {
         Icon.sprite=sprite;
@@ -34,6 +42,7 @@ public class HeroUIPopup : MonoBehaviour
         price.text = Cost.ToString();
         sell.text = ((int)Cost / 2).ToString();
         target=targetTower;
+        Debug.Log("set popup");
     }
     public void updateLevel()
     {
@@ -68,54 +77,62 @@ public class HeroUIPopup : MonoBehaviour
     {
         transform.DOScale(Vector3.zero, 0.5f);
         target = null;
+        isShow = false;
     }
     public void showPopup()
     {
         transform.DOScale(Vector3.one, 0.5f);
+        isShow = true;
+
     }
     public void SetPopup()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0;
+        Debug.Log("bat tat popup");
+        if (isShow)
+            closePopup();
+        else
+            showPopup();
+        //Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //mousePos.z = 0;
 
-        // Kiểm tra xem có bấm trúng Hero không (Yêu cầu Hero có Collider)
-        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+        //// Kiểm tra xem có bấm trúng Hero không (Yêu cầu Hero có Collider)
+        //RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
        
-        if(hit.collider!=null)
-        {
-            Debug.Log("da cham");
-            GameObject hitObject = hit.collider.gameObject;
-            towerGun hitObjectScript = hitObject.GetComponent<towerGun>();
-            if (hitObjectScript != null)
-            {
-                if(hitObject==target)
-                {
-                    closePopup();
-                }
-                else
-                {
-                    closePopup();
-                    Sprite elementIcon = elementManager.instance.getSpriteElement(hitObjectScript.element);
-                    SetUp(hitObjectScript.currentDamage,
-                   hitObjectScript.currentRange,
-                   hitObjectScript.currentLevel,
-                   hitObjectScript.currentCost,
-                   hitObjectScript.updateRange[hitObjectScript.currentLevel],
-                   hitObject,
-                    elementIcon
-                   );
-                    showPopup();
-                }
+        //if(hit.collider!=null)
+        //{
+        //    //Debug.Log("da cham");
+        //    GameObject hitObject = hit.collider.gameObject;
+        //    towerGun hitObjectScript = hitObject.GetComponent<towerGun>();
+        //    if (hitObjectScript != null)
+        //    {
+        //        if(hitObject==target)
+        //        {
+        //            closePopup();
+        //        }
+        //        else
+        //        {
+        //            closePopup();
+        //           // Sprite elementIcon = elementManager.instance.getSpriteElement(hitObjectScript.element);
+        //           // SetUp(hitObjectScript.currentDamage,
+        //           //hitObjectScript.currentRange,
+        //           //hitObjectScript.currentLevel,
+        //           //hitObjectScript.currentCost,
+        //           //hitObjectScript.updateRange[hitObjectScript.currentLevel],
+        //           //hitObject,
+        //           // elementIcon
+        //           //);
+        //            showPopup();
+        //        }
                
-            }
-        }
+        //    }
+        //}
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            SetPopup();
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    SetPopup();
+        //}
     }
     private void Start()
     {

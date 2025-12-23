@@ -14,7 +14,7 @@ public class hero1 : tower
     {
         base.Start();
         targetPosition= transform.position;
-        Debug.Log("bat dau ");
+        //Debug.Log("bat dau ");
     }
     public override void Update()
     {
@@ -26,7 +26,7 @@ public class hero1 : tower
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("da nhan chuot");
+           // Debug.Log("da nhan chuot");
             Vector3 mousePos= Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = 0;
 
@@ -34,7 +34,7 @@ public class hero1 : tower
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
             if(hit.collider==null)
             {
-                Debug.Log("hit null");
+              //  Debug.Log("hit null");
                 
             }
             if (isSelected)

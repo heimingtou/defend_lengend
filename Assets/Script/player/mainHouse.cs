@@ -10,9 +10,10 @@ public class mainHouse : MonoBehaviour
         Enemy enemy = other.gameObject.GetComponent<Enemy>();
         if (enemy != null)
         {
-            gameManager.instance.hpPlayer--;
+            gameManager.instance.hpPlayer-=enemy.damage;
+            gameManager.instance.changeHp(enemy.damage);
             Debug.Log(gameManager.instance.hpPlayer);
-            Destroy(enemy);
+            Destroy(other.gameObject);
         }
     }
 
